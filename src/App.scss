@@ -1,0 +1,184 @@
+@import "bootstrap_variables";
+@import url("https://use.typekit.net/jyv7fph.css");
+.App {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.App-header {
+  border-bottom: solid 1px $secondary;
+  position: sticky;
+  top: 0;
+  background: $primary;
+  z-index: 999;
+  form {
+    position: absolute;
+    top: 10px;
+    right: 5px;
+  }
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+////////////////////////////
+///// Typography START /////
+////////////////////////////
+body {
+  font-family: "Sofia-pro", sans-serif;
+  color: whitesmoke;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: bold;
+}
+//////////////////////////
+///// Typography END /////
+//////////////////////////
+
+////////////////////////////
+///// Animations START /////
+////////////////////////////
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+//////////////////////////
+///// Animations END /////
+//////////////////////////
+
+/////////////////////////////
+///// Sidebar Nav START /////
+/////////////////////////////
+.sidebar-nav-column {
+  border-right: solid 1px $secondary;
+  padding-left: 0;
+  padding-right: 0;
+
+  .flex-column.nav.nav-pills {
+    position: sticky;
+    top: 43px;
+  }
+
+  .nav-item {
+    border-bottom: solid 1px $secondary;
+    .nav-link {
+      color: whitesmoke;
+      border-radius: 0;
+      &.active,
+      &:hover {
+        background-color: $active-tab-color !important;
+      }
+    }
+  }
+
+  .user-profile-tabs {
+    position: absolute;
+    bottom: 0;
+    left: -2px;
+    width: inherit;
+    .nav-item {
+      border-top: solid 1px $secondary;
+      border-bottom: none;
+      .nav-link {
+        color: whitesmoke;
+        border-radius: 0;
+        &.active,
+        &:hover {
+          background-color: $active-tab-color !important;
+        }
+      }
+    }
+  }
+  .nav-icon-svg {
+    position: relative;
+    top: -2px;
+    margin-right: 5px;
+  }
+}
+///////////////////////////
+///// Sidebar Nav END /////
+///////////////////////////
+
+///////////////////////
+///// Cards START /////
+///////////////////////
+.dark-cards {
+  border: solid 1px $secondary;
+  .card-header {
+    border-bottom: solid 1px $secondary;
+  }
+  .card-footer {
+    border-top: solid 1px $secondary;
+    .btn {
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
+}
+/////////////////////
+///// Cards END /////
+/////////////////////
+
+////////////////////////
+///// Tables START /////
+////////////////////////
+table {
+  .id-column {
+    max-width: 20px;
+  }
+  td {
+    &.stream-column {
+      text-align: left;
+    }
+    &.amount-column {
+      text-align: right;
+    }
+    &.stream-column.type-indicator {
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        display: block;
+        width: 20px;
+        height: 20px;
+        background: white;
+        top: 0;
+        right: 0;
+        background: linear-gradient(225deg, #fff 50%, transparent 50%);
+      }
+      &.rent {
+        &::before {
+          background: linear-gradient(225deg, #b96518 50%, transparent 50%) !important;
+        }
+      }
+      &.basic {
+        &::before {
+          background: linear-gradient(225deg, #225293 50%, transparent 50%) !important;
+        }
+      }
+      &.subs {
+        &::before {
+          background: linear-gradient(225deg, #4a8d11 50%, transparent 50%) !important;
+        }
+      }
+      &.dept {
+        &::before {
+          background: linear-gradient(225deg, #ff0000 50%, transparent 50%) !important;
+        }
+      }
+    }
+  }
+}
+//////////////////////
+///// Tables END /////
+//////////////////////

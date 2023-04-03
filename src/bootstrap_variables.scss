@@ -1,0 +1,15 @@
+$theme-colors: (
+  "info": tomato,
+  "danger": teal,
+  "dark": #131127,
+  "primary": #282c34,
+  "secondary": #464646,
+);
+
+$primary: #282c34;
+$secondary: #464646;
+
+$active-tab-color: #414654;
+
+/* import bootstrap to set changes */
+@import "~bootstrap/scss/bootstrap";
