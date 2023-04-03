@@ -6,8 +6,14 @@ import { PersonVcard, Speedometer, Wallet, Wallet2 } from "react-bootstrap-icons
 import ProfileMain from "./components/profile/ProfileMain";
 
 function App() {
+  const handleSelect = () => {
+    const tabContent = document.getElementById('budget-app');
+    if (tabContent) {
+      tabContent.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
   return (
-    <div className="App bg-primary">
+    <div className="App bg-primary" id="budget-app">
       <header className="App-header">
         <Container fluid>
           <Row>
@@ -22,7 +28,7 @@ function App() {
       </header>
 
       <Container fluid className="h-100">
-        <Tab.Container id="main-nav" defaultActiveKey="dashboard">
+        <Tab.Container id="main-nav" defaultActiveKey="dashboard" onSelect={handleSelect}>
           <Row className="h-100">
             <Col sm={2} className="sidebar-nav-column">
               <Nav variant="pills" className="flex-column">
@@ -57,13 +63,13 @@ function App() {
               </div>
             </Col>
             <Col sm={10} className="px-0 pt-1">
-              <Tab.Content>
-                <Tab.Pane eventKey="dashboard">
+              <Tab.Content id="TabContent">
+                <Tab.Pane eventKey="dashboard" id="tab-dashboard">
                   <DashboardMain />
                 </Tab.Pane>
-                <Tab.Pane eventKey="income">More ipsum for income</Tab.Pane>
-                <Tab.Pane eventKey="expences">More ipsum for expences</Tab.Pane>
-                <Tab.Pane eventKey="profile">
+                <Tab.Pane eventKey="income" id="tab-income">More ipsum for income</Tab.Pane>
+                <Tab.Pane eventKey="expences" id="tab-expences">More ipsum for expences</Tab.Pane>
+                <Tab.Pane eventKey="profile" id="tab-profile">
                   <ProfileMain />
                 </Tab.Pane>
               </Tab.Content>
